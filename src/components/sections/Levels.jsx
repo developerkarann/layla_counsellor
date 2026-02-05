@@ -90,11 +90,11 @@ export default function Levels() {
   return (
     <section id="levels" className="flex min-h-screen flex-col overflow-visible bg-white px-4 pt-0 pb-10 md:px-6 md:pb-12">
       <LotusSectionIcon />
-      <div className="mx-auto flex flex-1 px-4 sm:px-6 md:px-8 lg:px-40 flex-col justify-center w-full max-w-7xl">
+      <div className="mx-auto flex flex-1 px-4 sm:px-6 md:px-8 lg:px-0 flex-col justify-center w-full ">
         <h2 className="font-garamond text-center text-xl text-reiki-dark sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl" style={{ fontFamily: 'EB Garamond' }}>
           Healing Practices
         </h2>
-        <div className="mt-6 sm:mt-8 md:mt-10 grid gap-6 sm:gap-10 md:gap-16 lg:gap-20 sm:grid-cols-2 lg:grid-cols-3">
+        <div style={{ gap: '60px' }} className="mt-6 sm:mt-8 md:mt-10 grid gap-6 sm:gap-10 md:gap-15 lg:gap-0 sm:grid-cols-2 lg:grid-cols-3">
           {LEVELS.map((level) => (
             <article
               key={level.title}
@@ -103,9 +103,9 @@ export default function Levels() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                fontFamily: 'Lato'
+                fontFamily: 'Lato',
               }}
-              className="relative flex flex-col rounded-xl border border-reiki-card-border overflow-hidden min-h-[380px] sm:min-h-[420px] md:min-h-[460px] lg:min-h-[500px] w-full min-w-0 bg-cover bg-center bg-no-repeat justify-center items-center gap-0 p-4 sm:p-5"
+              className="relative flex flex-col rounded-xl border border-reiki-card-border overflow-hidden min-h-[380px] sm:min-h-[420px] md:min-h-[460px] lg:min-h-[600px] w-full min-w-0 bg-cover bg-center bg-no-repeat justify-center items-center gap-0 p-4 sm:p-5 md:min-w-[400px] lg:min-w-[400px]"
             >
               {/* Very light edge vignette only – image stays vivid across the card */}
               <div

@@ -9,7 +9,7 @@ export default function Testimonial() {
   const [activeDot, setActiveDot] = useState(0);
 
   return (
-    <section className="flex min-h-screen flex-col overflow-visible bg-white px-4 pt-0 pb-8 sm:pb-10 md:px-6 md:pb-12">
+    <section className="flex flex-col overflow-visible bg-white px-4   pt-0 pb-8 sm:pb-10 md:px-6 md:pb-22">
       <LotusSectionIcon />
       <div className="mx-auto flex flex-1 max-w-6xl flex-col justify-center w-full">
         <div className="relative flex flex-col sm:flex-row items-start gap-4 sm:gap-6 md:gap-8">
@@ -26,7 +26,7 @@ export default function Testimonial() {
                 </span>
               </span>
               <div className="min-w-0">
-                <p className="text-left font-serif text-base sm:text-lg md:text-xl lg:text-2xl italic leading-relaxed text-reiki-quote">
+                <p className="text-left font-serif text-xs sm:text-lg md:text-xl lg:text-2xl italic leading-relaxed text-reiki-quote">
                   {QUOTE_TEXT}
                 </p>
                 <cite className="mt-3 sm:mt-4 block text-left font-serif text-xs sm:text-sm not-italic text-reiki-quote-attribution">

@@ -9,9 +9,9 @@ export default function Newsletter() {
   }
 
   return (
-    <section className="flex min-h-screen flex-col bg-reiki-bg-stripe px-4 py-8 sm:py-10 md:px-6 md:py-12">
-      <div className="mx-auto flex flex-1 px-4 sm:px-6 md:px-8 lg:px-20 flex-col justify-center w-full max-w-7xl">
-        <div className="flex flex-col items-stretch gap-6 sm:gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-30 w-full">
+    <section className="flex  flex-col bg-reiki-bg-stripe px-4 py-8 sm:py-30 md:px-18 md:py-12 mt-20">
+      <div className="mx-auto flex flex-1 px-4 sm:py-30 sm:px-6 md:px-8 lg:px-0 flex-col justify-center w-full max-w-7xl">
+        <div className="flex flex-col items-stretch gap-6 sm:gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-20 w-full">
           {/* Left: serif italic, dark grey, left-aligned, moderate size */}
           <p className="text-left font-serif text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl italic text-reiki-newsletter-text leading-tight">
             Subscribe to our newsletter & be informed about news and offers
@@ -19,7 +19,7 @@ export default function Newsletter() {
           {/* Right: single bordered container with input + button */}
           <form
             onSubmit={handleSubmit}
-            className="flex w-full max-w-full sm:max-w-md flex-row overflow-hidden border border-reiki-newsletter-border lg:max-w-[50%] shrink-0"
+            className="flex w-full max-w-full sm:max-w-md flex-row overflow-hidden border border-reiki-newsletter-border shrink-0"
           >
             <input
               type="email"

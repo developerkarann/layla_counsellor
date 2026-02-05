@@ -21,7 +21,7 @@ export default function Header() {
 
         <a
           href="#home"
-          className="absolute left-1/2 flex -translate-x-1/2 flex-col items-center font-script text-xl font-semibold text-reiki-dark sm:text-2xl md:text-4xl"
+          className="absolute left-1/2 flex -translate-x-1/2 flex-col items-center font-script text-xl font-semibold text-reiki-dark sm:text-3xl md:text-4xl"
         >
           Layla
           <span className="mt-0.5 block h-px w-8 bg-reiki-dark/40" aria-hidden />
