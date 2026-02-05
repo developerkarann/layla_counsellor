@@ -11,7 +11,7 @@ import Testimonial from "./components/sections/Testimonial";
 
 function App() {
   return (
-    <div className="min-h-screen bg-page-bg antialiased">
+    <div className="min-h-screen min-w-0 overflow-x-hidden bg-page-bg antialiased">
       <Header />
       <main>
         <HeroSlider />

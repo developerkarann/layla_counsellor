@@ -11,7 +11,7 @@ export default function LotusSectionIcon() {
       <img
         src="/lotus.png"
         alt=""
-        className="h-20 w-auto object-contain object-top md:h-34"
+        className="h-16 w-auto object-contain object-top sm:h-20 md:h-32 lg:h-[8.5rem]"
         width={80}
         height={96}
       />

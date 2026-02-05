@@ -14,14 +14,14 @@ export default function Header() {
   return (
     <header className=" top-0 z-50 w-full border-b border-l border-reiki-accent/60 bg-reiki-bg-stripe">
       {/* Top section: left = number + Get in touch, center = logo, right = number + Login */}
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4 px-4 py-3 md:px-6">
         <div className="flex items-center gap-4">
 
         </div>
 
         <a
           href="#home"
-          className="absolute left-1/2 flex -translate-x-1/2 flex-col items-center font-script text-2xl font-semibold text-reiki-dark md:text-4xl"
+          className="absolute left-1/2 flex -translate-x-1/2 flex-col items-center font-script text-xl font-semibold text-reiki-dark sm:text-2xl md:text-4xl"
         >
           Layla
           <span className="mt-0.5 block h-px w-8 bg-reiki-dark/40" aria-hidden />

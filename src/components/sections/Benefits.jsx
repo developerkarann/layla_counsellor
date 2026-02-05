@@ -1,17 +1,22 @@
 import LotusSectionIcon from "../LotusSectionIcon";
 
 const LEFT_BENEFITS = [
-  "Receive healing energy, Boost immune strength, And reduce stress in daily life.",
-  "Eliminate spiritual and emotional blockage, Enhance self-love in daily life.",
-  "Reactivate balance and restore energetic body.",
-  "Improve daily activities by Following your dreams With confidence.",
+  // "Shamanic Healing",
+  // "Bring Harmony in your Relationships.",
+  // "Cultivate Joy and Peace with Yourself.",
+  // "Open your Heart to Greater Love.",
+  // "Realize your Life Purpose & Mission",
+  // "Free from Traumas.",
+  "Bridging Cultures: Empowerment Coaching for Global Souls.",
+  "Find Home Within: Resolve Conflicts of Dual Identities.",
+  "Aligned Across Borders: Balance Expectations with Personal Growth.",
 ];
 
 const RIGHT_BENEFITS = [
-  "Remove restricted area for health of mental, emotional and physical bodies.",
-  "Create a positive impact on your psyche.",
-  "Helps you keep the uninterrupted flow of energy in your body.",
-  "Everything you desire feels achievable, you will get a compassionate touch.",
+
+  "Grow your Global Roots : Reconcile Cultures Differences, Harmonize Relationships.",
+  "Belong Beyond : Redefine Belonging and Shape your Family Values.",
+  "Find Your Voice: Cultivate Self-Expression and Authenticity."
 ];
 
 function BenefitIcon() {
@@ -37,9 +42,9 @@ function BenefitIcon() {
 
 function BenefitItem({ text }) {
   return (
-    <li className="flex gap-7 text-left px-5" style={{ fontFamily: 'Lato' }}>
+    <li className="flex gap-3 sm:gap-5 md:gap-7 text-left px-2 sm:px-4 md:px-5" style={{ fontFamily: 'Lato' }}>
       <BenefitIcon />
-      <span className="font-lato text-reiki-dark text-lg leading-relaxed" style={{ fontFamily: 'Lato' }}>
+      <span className="font-lato text-reiki-dark text-base sm:text-lg leading-relaxed" style={{ fontFamily: 'Lato' }}>
         {text}
       </span>
     </li>
@@ -50,33 +55,36 @@ export default function Benefits() {
   return (
     <section id="benefits" className="flex min-h-screen flex-col overflow-visible bg-white px-4 pt-0 pb-10 md:px-6 md:pb-12">
       <LotusSectionIcon />
-      <div className="mx-auto flex flex-1 max-w-7xl flex-col justify-center">
+      <div className="mx-auto flex flex-1 px-4 sm:px-6 md:px-8 lg:px-40 flex-col justify-center">
         {/* Optional category label – subtle */}
-        <h2 className="mt-1 text-center text-2xl leading-tight text-reiki-dark md:text-6xl font-garamond" style={{ fontFamily: 'EB Garamond' }}>
-          Benefits
+        <h2 className="mt-1 text-center text-xl leading-tight text-reiki-dark sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-garamond" style={{ fontFamily: 'EB Garamond' }}>
+          <span>
+            Holistic Coaching for Third Culture Kids (TCKs)
+          </span>
+
         </h2>
         {/* Tree structure: left column | central arched image | right column */}
-        <div className="mt-10 grid gap-8 lg:grid-cols-3 lg:gap-10 lg:items-start">
+        <div className="mt-6 sm:mt-8 md:mt-10 grid gap-6 sm:gap-8 lg:grid-cols-3 lg:gap-10 lg:items-start ">
           {/* Left benefits column – same structure as right */}
-          <ul className="space-y-10 lg:pt-36">
+          <ul className="space-y-6 sm:space-y-8 md:space-y-10 lg:pt-32">
             {LEFT_BENEFITS.map((text, i) => (
               <BenefitItem key={i} text={text} />
             ))}
           </ul>
           {/* Central arched image */}
-          <div className="flex justify-center">
-            <div className="relative w-full max-w-[480px] overflow-hidden">
-              <div className="aspect-[3/4] w-full overflow-hidden rounded-t-[13rem] bg-reiki-section-alt shadow-md">
+          <div className="flex justify-center order-first lg:order-none">
+            <div className="relative w-full max-w-sm mx-auto lg:max-w-none overflow-hidden">
+              <div className="aspect-[3/4] w-full overflow-hidden rounded-t-[8rem] sm:rounded-t-[10rem] md:rounded-t-[12rem] lg:rounded-t-[13rem] bg-reiki-section-alt shadow-md">
                 <img
-                  src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=500&q=80"
-                  alt="Reiki session: practitioner with hands near recipient's head"
+                  src="/layla3.JPG"
+                  alt="Layla Choug "
                   className="h-full w-full object-cover"
                 />
               </div>
             </div>
           </div>
           {/* Right benefits column – mirror of left */}
-          <ul className="space-y-10 lg:pt-36">
+          <ul className="space-y-6 sm:space-y-8 md:space-y-10 lg:pt-32">
             {RIGHT_BENEFITS.map((text, i) => (
               <BenefitItem key={i} text={text} />
             ))}

@@ -4,11 +4,70 @@ const LEVEL_DESCRIPTION =
   "Praesent porttitor purus vel nunc rhoncus, at ornare turpis suscipit. Ut non condimentum tellus. Praesent in turpis eu sem mollis laoreet vehicula sit amet tellus.";
 
 const LEVELS = [
-  { title: "Level I", subtitle: "Healing Your Body", img: '/tree.png' },
-  { title: "Level II - A", subtitle: "Healing Your Mind", img: '/tree2.png' },
-  { title: "Level II - B", subtitle: "Alignment, Balance & Centeredness", img: '/tree3.png' },
+  {
+    title: "Join the Healing Space", img: '/h1.JPG',
+    list: [
+      "Mindfulness Meditations",
+      "Shamanic Guided Journeys",
+      "Healing Music and Sound Journeys",
+      "Empowering Wisdom & Rituals",
+      "Podcasts Bridging Cultures & Identities"
+    ],
+  },
+  {
+    title: "Shamanic Healing", img: '/h2.JPG', list: [
+      "Bring Harmony in your Relationships",
+      "Free from Traumas",
+      "Cultivate Joy and Peace with Yourself",
+      "Open your Heart to Greater Love",
+      "Realize your Life Purpose & Mission"
+    ]
+  },
+  {
+    title: "Medical Qigong", img: '/h3.JPG', list: [
+      'Restore your Health & Vitality',
+      'Improve Physical Mobility & Reduce Stress',
+      'Achieve Emotional & Mental Balance',
+      'Align Your Mind, Body & Spirit',
+      'Age with Serennity'
+    ]
+  },
 ];
 
+function BenefitIcon() {
+  return (
+    <span
+      className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-reiki-benefit-icon"
+      aria-hidden
+    >
+      <svg
+        viewBox="0 0 24 24"
+        className="h-3.5 w-3.5 text-reiki-dark"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M20 6L9 17l-5-5" />
+      </svg>
+    </span>
+  );
+}
+
+function BenefitItem({ text }) {
+  return (
+    <li className="flex gap-3 sm:gap-5 md:gap-7 text-left px-2 sm:px-4 md:px-5" style={{ fontFamily: "Lato" }}>
+      <BenefitIcon />
+      <span
+        className="font-lato text-reiki-dark text-sm sm:text-base leading-relaxed"
+        style={{ fontFamily: "Lato" }}
+      >
+        {text}
+      </span>
+    </li>
+  );
+}
 function CardTreeBackground() {
   return (
     <div
@@ -31,33 +90,56 @@ export default function Levels() {
   return (
     <section id="levels" className="flex min-h-screen flex-col overflow-visible bg-white px-4 pt-0 pb-10 md:px-6 md:pb-12">
       <LotusSectionIcon />
-      <div className="mx-auto flex flex-1 max-w-7xl flex-col justify-center">
-        <h2 className="font-garamond text-center text-2xl text-reiki-dark md:text-6xl" style={{ fontFamily: 'EB Garamond' }}>
-          Levels
+      <div className="mx-auto flex flex-1 px-4 sm:px-6 md:px-8 lg:px-40 flex-col justify-center w-full max-w-7xl">
+        <h2 className="font-garamond text-center text-xl text-reiki-dark sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl" style={{ fontFamily: 'EB Garamond' }}>
+          Healing Practices
         </h2>
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 sm:mt-8 md:mt-10 grid gap-6 sm:gap-10 md:gap-16 lg:gap-20 sm:grid-cols-2 lg:grid-cols-3">
           {LEVELS.map((level) => (
             <article
               key={level.title}
-              style={{ backgroundImage: `url(${level.img})`, backgroundSize: "cover", backgroundPosition: "bottom center", fontFamily: 'Lato' }}
-              className="relative flex flex-col rounded-lg border border-reiki-card-border bg-white px-6 py-8 text-center min-h-[500px] bg-cover bg-bottom bg-no-repeat justify-center items-center gap-10"
+              style={{
+                backgroundImage: `url(${level.img})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                fontFamily: 'Lato'
+              }}
+              className="relative flex flex-col rounded-xl border border-reiki-card-border overflow-hidden min-h-[380px] sm:min-h-[420px] md:min-h-[460px] lg:min-h-[500px] w-full min-w-0 bg-cover bg-center bg-no-repeat justify-center items-center gap-0 p-4 sm:p-5"
             >
+              {/* Very light edge vignette only – image stays vivid across the card */}
+              <div
+                className="absolute inset-0 pointer-events-none rounded-xl"
+                style={{
+                  background: 'radial-gradient(ellipse 85% 80% at 50% 50%, transparent 50%, rgba(58,79,63,0.06) 100%)',
+                }}
+                aria-hidden
+              />
               <CardTreeBackground />
-              <h3 className="relative font-serif text-4xl font-medium text-reiki-dark" style={{ fontFamily: 'Garamond' }}>
-                {level.title}
-              </h3>
-              <p className="relative mt-2 font-serif text-2xl font-bold leading-snug text-reiki-dark">
-                {level.subtitle}
-              </p>
-              <p className="relative mt-5 flex-1 font-serif text-sm leading-relaxed text-reiki-level-desc px-15 ">
-                {LEVEL_DESCRIPTION}
-              </p>
-              <a
-                href="#contact"
-                className="relative mt-6 inline-block rounded px-8 py-3 font-sans text-sm font-semibold text-white transition hover:opacity-90 bg-reiki-dark"
+              {/* Glass panel: only this area gets frosted; rest of card shows full image */}
+              <div
+                className="relative z-10 w-full max-w-full sm:max-w-[380px] lg:max-w-[420px] rounded-xl sm:rounded-2xl px-4 py-5 sm:px-6 sm:py-7 flex flex-col items-center gap-4 sm:gap-6 border border-white/50 shadow-[0_8px_32px_rgba(58,79,63,0.15),inset_0_1px_0_rgba(255,255,255,0.7)]"
+                style={{
+                  background: 'rgba(248,253,247,0.82)',
+                  backdropFilter: 'blur(12px)',
+                  WebkitBackdropFilter: 'blur(12px)',
+                }}
               >
-                Send Enquiry
-              </a>
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-reiki-dark text-center" style={{ fontFamily: 'Garamond' }}>
+                  {level.title}
+                </h3>
+                <ul className="space-y-4 sm:space-y-6 md:space-y-8 w-full">
+                  {level.list.map((text, i) => (
+                    <BenefitItem key={i} text={text} />
+                  ))}
+                </ul>
+                <a
+                  href="#contact"
+                  className="mt-2 inline-block rounded-lg px-8 py-3 font-sans text-sm font-semibold text-white transition hover:opacity-90 bg-reiki-dark shadow-md"
+                >
+                  Send Enquiry
+                </a>
+              </div>
             </article>
           ))}
         </div>

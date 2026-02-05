@@ -4,17 +4,17 @@ const SLIDES = [
   {
     alt: "Reiki practitioner using a pendulum during a healing session",
     placeholder:
-      "https://img.freepik.com/free-photo/psychology-therapy-psychiatry-mental-health-counseling-concept-candid-shot-nervous-self-conscious-young-male-glasses-telling-middle-aged-female-counselor-about-his-problems-work_344912-1940.jpg?semt=ais_hybrid&w=740&q=80",
+      "/slide1.JPG",
   },
   {
     alt: "Woman meditating with hands near head in a serene room",
     placeholder:
-      "https://img.freepik.com/free-photo/young-girl-talking-therapist-medium-shot_23-2150136580.jpg?semt=ais_hybrid&w=740&q=80",
+      "/slide4.JPG",
   },
   {
     alt: "Calm healing space with natural light",
     placeholder:
-      "https://t3.ftcdn.net/jpg/00/80/61/14/360_F_80611460_5kI32U9rzqCE2GqBHtO5db1VW7E4yZsu.jpg",
+      "/slide3.JPG",
   },
 ];
 
@@ -29,10 +29,10 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <section id="home" className="bg-reiki-bg-stripe px-4 py-6 md:px-6 md:py-10">
+    <section id="home" className="bg-reiki-bg-stripe px-3 sm:px-4 py-4 sm:py-6 md:px-6 md:py-10">
       <div className="mx-auto max-w-[1450px]">
         <div className="overflow-hidden rounded-lg bg-reiki-section shadow-md">
-          <div className="relative aspect-[16/9] w-full md:aspect-[2.2/1]">
+          <div className="relative aspect-[4/3] sm:aspect-[16/9] w-full md:aspect-[2.2/1]">
             {SLIDES.map((slide, i) => (
               <div
                 key={i}

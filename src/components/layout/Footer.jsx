@@ -9,17 +9,15 @@ const FOOTER_LINKS = [
 export default function Footer() {
   return (
     <footer id="contact" className="bg-reiki-dark text-white">
-      <div className="mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:py-10 md:px-6 md:py-16">
+        <div className="grid gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">
           {/* Brand + description */}
-          <div className="space-y-4">
-            <a href="#home" className="font-script text-2xl font-semibold md:text-3xl">
-              Reiki
+          <div className="space-y-3 sm:space-y-4">
+            <a href="#home" className="font-script text-xl font-semibold sm:text-2xl md:text-3xl">
+              Layla
             </a>
-            <p className="text-sm leading-relaxed text-white/90">
-              Reiki means Universal Life Force Energy. I am Jane and I&apos;ve been
-              practicing Reiki for the last 12 years, offering healing and teaching at
-              multiple levels. Proud member of IDHN.
+            <p className="text-xs sm:text-sm leading-relaxed text-white/90">
+              I dream of a world where we all live together in harmony, where our hearts are so free that our whole being opens to a joyful, purposeful and accomplished path
             </p>
           </div>
 
