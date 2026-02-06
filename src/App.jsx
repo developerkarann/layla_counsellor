@@ -1,32 +1,27 @@
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import HeroSlider from "./components/HeroSlider";
-import ReikiMeaning from "./components/sections/ReikiMeaning";
-import OriginOfReiki from "./components/sections/OriginOfReiki";
-import Benefits from "./components/sections/Benefits";
-import AboutJane from "./components/sections/AboutJane";
-import Levels from "./components/sections/Levels";
-import Blog from "./components/sections/Blog";
-import Gallery from "./components/sections/Gallery";
-import Newsletter from "./components/sections/Newsletter";
-import Testimonial from "./components/sections/Testimonial";
+import HomePage from "./pages/HomePage";
+import GalleryPage from "./pages/GalleryPage";
+import BlogPage from "./pages/BlogPage";
+import BlogDetailPage from "./pages/BlogDetailPage";
+import ContactPage from "./pages/ContactPage";
+import ServicesPage from "./pages/ServicesPage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
     <div className="min-h-screen min-w-0 overflow-x-hidden bg-page-bg antialiased">
       <Header />
-      <main>
-        <HeroSlider />
-        <ReikiMeaning />
-        <OriginOfReiki />
-        <Benefits />
-        <AboutJane />
-        <Levels />
-        <Blog />
-        <Gallery />
-        <Newsletter />
-        <Testimonial />
-      </main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogDetailPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
       <Footer />
     </div>
   );

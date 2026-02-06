@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import LotusSectionIcon from "../LotusSectionIcon";
 
 const LEVEL_DESCRIPTION =
@@ -94,6 +95,11 @@ export default function Levels() {
         <h2 className="font-garamond text-center text-xl text-reiki-dark sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl" style={{ fontFamily: 'EB Garamond' }}>
           Healing Practices
         </h2>
+        <p className="mt-2 text-center">
+          <Link to="/services" className="font-lato text-sm font-semibold text-reiki-olive hover:underline">
+            Explore all services →
+          </Link>
+        </p>
         <div style={{ gap: '60px' }} className="mt-6 sm:mt-8 md:mt-10 grid gap-6 sm:gap-10 md:gap-15 lg:gap-0 sm:grid-cols-2 lg:grid-cols-3">
           {LEVELS.map((level) => (
             <article
@@ -134,7 +140,7 @@ export default function Levels() {
                   ))}
                 </ul>
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="mt-2 inline-block rounded-lg px-8 py-3 font-sans text-sm font-semibold text-white transition hover:opacity-90 bg-reiki-dark shadow-md"
                 >
                   Send Enquiry

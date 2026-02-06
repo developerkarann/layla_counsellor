@@ -88,7 +88,7 @@ export default function HeroSlider() {
           </div>
         </div>
         {/* Pagination dots - one per slide */}
-        <div className="mt-4 flex flex-wrap justify-center gap-2">
+        {/* <div className="mt-4 flex flex-wrap justify-center gap-2">
           {SLIDES.map((_, i) => (
             <button
               key={`dot-${i}`}
@@ -99,7 +99,7 @@ export default function HeroSlider() {
               aria-current={i === currentIndex ? "true" : undefined}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

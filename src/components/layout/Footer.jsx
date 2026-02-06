@@ -1,9 +1,10 @@
 const FOOTER_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "What is Reiki?", href: "#what-is-reiki" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Footer() {
@@ -13,7 +14,7 @@ export default function Footer() {
         <div className="grid gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">
           {/* Brand + description */}
           <div className="space-y-3 sm:space-y-4">
-            <a href="#home" className="font-script text-xl font-semibold sm:text-2xl md:text-3xl">
+            <a href="/" className="font-script text-xl font-semibold sm:text-2xl md:text-3xl">
               Layla
             </a>
             <p className="text-xs sm:text-sm leading-relaxed text-white/90">

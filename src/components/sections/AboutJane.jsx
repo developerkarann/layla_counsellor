@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function AboutJane() {
   return (
     <section id="about" className="flex min-h-screen flex-col bg-reiki-bg-stripe px-4 py-8 sm:py-10 md:px-6 md:py-12">
@@ -23,6 +25,9 @@ export default function AboutJane() {
             <p className="mt-4 sm:mt-6 font-lato text-reiki-dark text-sm leading-relaxed sm:text-base md:text-lg">
               The techniques shaping my work reflect an attuned understanding of the complexities of the human life journey, whether it catalyzes a search for meaning and purpose, a desire to connect more deeply and authentically with others, or a need to heal and find peace amidst personal crises and identity struggles in cross-cultural and rapidly changing environments.
             </p>
+            <Link to="/about" className="mt-6 inline-block font-lato text-sm font-semibold text-reiki-olive hover:underline">
+              Read my full story →
+            </Link>
           </div>
         </div>
       </div>

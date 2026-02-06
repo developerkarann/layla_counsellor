@@ -23,9 +23,9 @@ export default function ReikiMeaning() {
             Create the life you want to live !
           </p>
 
-          <button className="relative mt-6 sm:mt-8 inline-block rounded px-6 py-2.5 sm:px-8 sm:py-3 font-sans text-sm sm:text-base font-semibold text-white transition hover:opacity-90 bg-reiki-dark">
+          <a href="/about" className="relative mt-6 sm:mt-8 inline-block rounded px-6 py-2.5 sm:px-8 sm:py-3 font-sans text-sm sm:text-base font-semibold text-white transition hover:opacity-90 bg-reiki-dark">
             Learn more
-          </button>
+          </a>
         </div>
         <div className="max-w-xl lg:max-w-none">
           <p className="text-left font-lato text-sm leading-relaxed text-reiki-body sm:text-base md:text-lg mb-3 sm:mb-4">
