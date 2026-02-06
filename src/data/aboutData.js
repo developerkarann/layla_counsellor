@@ -45,7 +45,7 @@ export const ABOUT = {
 
 export const TESTIMONIAL = {
   quote: "The healing session I had with Layla was astonishing and the experience is hard to describe in words. During the session I was able to get rid of a lot of mental and physical baggage and tension. I even shed a few tears without feeling any sadness. Layla gave me a very good and trusting feeling right from the start, which enabled me to let myself go. At the end of the session, Layla gave her assessment of my current situation and brought back an experience from my past that was spot on – all in all it was an amazing, almost surreal experience.",
-  attribution: "Paul — Financial Consultant, Switzerland",
+  attribution: "Paul — Financial Consultant Switzerland",
 };
 
 export const JOURNEY = [

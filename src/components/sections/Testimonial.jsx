@@ -1,58 +1,44 @@
-import { useState } from "react";
 import LotusSectionIcon from "../LotusSectionIcon";
-
-const QUOTE_TEXT =
-  "The healing session I had with Layla was astonishing and the experience is hard to describe in words. During the session I was able to get rid of a lot of mental and physical baggage and tension. I even shed a few tears without feeling any sadness. Layla gave me a very good and trusting feeling right from the start, which enabled me to let myself go. At the end of the session, Layla gave her assessment of my current situation and brought back an experience from my past that was spot on – all in all it was an amazing, almost surreal experience.";
-const ATTRIBUTION = "By Paul - Financial Consultant, Switzerland";
+import { TESTIMONIAL as TESTIMONIAL_DATA } from "../../data/aboutData";
 
 export default function Testimonial() {
-  const [activeDot, setActiveDot] = useState(0);
-
   return (
-    <section className="flex flex-col overflow-visible bg-white px-4   pt-0 pb-8 sm:pb-10 md:px-6 md:pb-22">
+    <section
+      id="testimonial"
+      className="relative overflow-hidden bg-white py-12 md:py-16"
+      aria-labelledby="testimonial-heading"
+    >
       <LotusSectionIcon />
-      <div className="mx-auto flex flex-1 max-w-6xl flex-col justify-center w-full">
-        <div className="relative flex flex-col sm:flex-row items-start gap-4 sm:gap-6 md:gap-8">
-          {/* Quote + attribution (left-central) */}
-          <blockquote className="flex-1 min-w-0">
-            <div className="flex items-start gap-3 sm:gap-4">
-              {/* Opening quote mark: solid green inside light green circular outline */}
-              <span
-                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-reiki-accent text-reiki-dark sm:h-14 sm:w-14 md:h-24 md:w-24"
-                aria-hidden
-              >
-                <span className="font-serif text-2xl leading-none sm:text-3xl md:text-5xl lg:text-6xl">
-                  &ldquo;
-                </span>
-              </span>
-              <div className="min-w-0">
-                <p className="text-left font-serif text-xs sm:text-lg md:text-xl lg:text-2xl italic leading-relaxed text-reiki-quote">
-                  {QUOTE_TEXT}
+      <div className="mx-auto max-w-6xl px-4 sm:px-5 md:px-6">
+        <header className="text-center mb-8 md:mb-10">
+          <h2
+            id="testimonial-heading"
+            className="font-garamond text-2xl text-reiki-dark sm:text-3xl md:text-4xl"
+            style={{ fontFamily: "EB Garamond" }}
+          >
+            Words from <span className="text-reiki-olive">clients</span>
+          </h2>
+        </header>
+        <div className="grid grid-cols-1 md:grid-cols-12 md:min-h-[360px] gap-0">
+          <figure className="relative md:col-span-5 order-2 md:order-1 min-h-[240px] md:min-h-0 m-0 overflow-hidden rounded-2xl border border-reiki-card-border shadow-sm">
+            <img
+              src="/about.JPG"
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            />
+          </figure>
+          <div className="relative md:col-span-7 order-1 md:order-2 flex items-center py-8 md:py-12 px-0 md:pl-8 lg:pl-10 md:pr-4">
+            <figure className="m-0 w-full">
+              <blockquote className="relative border-l-4 border-reiki-olive pl-6 md:pl-7">
+                <span className="absolute -left-1 md:left-0 -top-1 font-serif text-5xl sm:text-6xl md:text-7xl text-reiki-olive/20 leading-none select-none" aria-hidden>&ldquo;</span>
+                <p className="relative font-serif text-base sm:text-lg md:text-xl italic text-reiki-quote leading-relaxed" style={{ fontFamily: "Lora" }}>
+                  {TESTIMONIAL_DATA.quote}
                 </p>
-                <cite className="mt-3 sm:mt-4 block text-left font-serif text-xs sm:text-sm not-italic text-reiki-quote-attribution">
-                  {ATTRIBUTION}
+                <cite className="mt-4 md:mt-5 block font-lato text-sm not-italic text-reiki-quote-attribution font-medium">
+                  {TESTIMONIAL_DATA.attribution}
                 </cite>
-              </div>
-            </div>
-          </blockquote>
-
-          {/* Vertical three dots (right) + faint line */}
-          <div className="flex shrink-0 items-center gap-2 self-center sm:self-auto">
-            <div className="flex flex-col items-center gap-2 py-2">
-              {[0, 1, 2].map((i) => (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={() => setActiveDot(i)}
-                  className={`h-2.5 w-2.5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-reiki-dark/30 ${i === activeDot
-                    ? "border-2 border-reiki-dark bg-transparent"
-                    : "bg-reiki-dark"
-                    }`}
-                  aria-label={`View testimonial ${i + 1}`}
-                  aria-pressed={i === activeDot}
-                />
-              ))}
-            </div>
+              </blockquote>
+            </figure>
           </div>
         </div>
       </div>
