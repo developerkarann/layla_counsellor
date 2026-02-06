@@ -26,7 +26,6 @@ export default function Testimonial() {
               alt=""
               className="absolute inset-0 h-full w-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-reiki-bg-stripe/90 to-transparent" aria-hidden />
           </figure>
           <div className="relative md:col-span-7 order-1 md:order-2 flex items-center py-8 md:py-12 px-0 md:pl-8 lg:pl-10 md:pr-4">
             <figure className="m-0 w-full">
