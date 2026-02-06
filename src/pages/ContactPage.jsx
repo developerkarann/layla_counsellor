@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaInstagram, FaFacebookF, FaYoutube, FaTelegram } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaYoutube, FaTelegram, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import LotusSectionIcon from "../components/LotusSectionIcon";
 
@@ -11,23 +11,29 @@ const CONTACT_METHODS = [
     description: "For inquiries, bookings, or a first hello.",
     value: "E-mail@mail.com",
     href: "mailto:E-mail@mail.com",
-    icon: "✉",
+    iconKey: "envelope",
   },
   {
     title: "Phone",
     description: "Prefer to talk? Leave a message and I’ll call back.",
     value: "+1 234 567 8900",
     href: "tel:+12345678900",
-    icon: "☎",
+    iconKey: "phone",
   },
   {
     title: "Location",
     description: "In-person sessions by appointment.",
     value: "Addition Street 2, 84",
     href: null,
-    icon: "◉",
+    iconKey: "location",
   },
 ];
+
+const CONTACT_ICONS = {
+  envelope: FaEnvelope,
+  phone: FaPhone,
+  location: FaMapMarkerAlt,
+};
 
 const INTEREST_OPTIONS = [
   "Reiki & Energy Healing",
@@ -125,13 +131,15 @@ export default function ContactPage() {
             Choose what feels right for you—email, phone, or the form below.
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {CONTACT_METHODS.map((method) => (
+            {CONTACT_METHODS.map((method) => {
+              const Icon = CONTACT_ICONS[method.iconKey];
+              return (
               <div
                 key={method.title}
                 className="rounded-2xl border border-reiki-card-border bg-reiki-section p-6 sm:p-8 shadow-sm transition-shadow hover:shadow-md"
               >
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-reiki-accent text-xl text-reiki-dark" aria-hidden>
-                  {method.icon}
+                  {Icon ? <Icon className="text-xl" /> : null}
                 </span>
                 <h3 className="mt-4 font-garamond text-xl text-reiki-dark" style={{ fontFamily: "EB Garamond" }}>{method.title}</h3>
                 <p className="mt-2 font-lato text-sm text-reiki-body">{method.description}</p>
@@ -143,7 +151,8 @@ export default function ContactPage() {
                   <p className="mt-4 font-lato text-sm font-medium text-reiki-dark">{method.value}</p>
                 )}
               </div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>

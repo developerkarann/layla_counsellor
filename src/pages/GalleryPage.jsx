@@ -12,12 +12,10 @@ const HEALING_SPACES = [
 ];
 
 const NATURE_STILLNESS = [
-  { src: "/slide2.JPG", alt: "Stillness" },
-  { src: "/slide4.JPG", alt: "Meditation" },
-  { src: "/standing.JPG", alt: "Nature" },
-  { src: "/yoga.JPG", alt: "Quiet" },
-  { src: "/main3.JPG", alt: "Reflection" },
-  { src: "/IMG_0863.JPG", alt: "Peace" },
+  { src: "/IMG_0620.JPG", alt: "Calm in nature" },
+  { src: "/IMG_3028.JPG", alt: "Quiet moment" },
+  { src: "/IMG_6293.JPG", alt: "Stillness" },
+  { src: "/IMG_6330.JPG", alt: "Peaceful presence" },
 ];
 
 const PRACTICE_PRESENCE = [
@@ -89,31 +87,64 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Nature & Stillness – 4 images, symmetric 2×2 */}
-      <section className="bg-reiki-bg-stripe px-4 py-12 md:py-16 lg:py-20" aria-labelledby="nature-stillness-heading">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
-          <header className="text-center">
-            <h2 id="nature-stillness-heading" className="font-garamond text-2xl text-reiki-dark sm:text-3xl md:text-4xl" style={{ fontFamily: "EB Garamond" }}>
+      {/* Nature & Stillness – 4 equal heroes, 2×2 grid, each image prominent */}
+      <section
+        className="relative overflow-hidden bg-reiki-bg-stripe px-4 py-12 sm:py-16 md:py-20 lg:py-24"
+        aria-labelledby="nature-stillness-heading"
+      >
+        {/* Subtle radial glow for depth */}
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_20%,var(--tw-gradient-from)_0%,transparent_50%)] from-reiki-olive/5 to-transparent" aria-hidden />
+        <div className="relative mx-auto max-w-7xl px-3 sm:px-5 md:px-6">
+          <header className="text-center mb-10 sm:mb-12 md:mb-14">
+            <p className="font-lato text-xs uppercase tracking-[0.2em] text-reiki-olive/80 sm:text-sm mb-3">
+              Moments of calm
+            </p>
+            <h2 id="nature-stillness-heading" className="font-garamond text-3xl text-reiki-dark sm:text-4xl md:text-5xl lg:text-6xl" style={{ fontFamily: "EB Garamond" }}>
               Nature & <span className="text-reiki-olive">Stillness</span>
             </h2>
-            <p className="mt-2 font-lato text-sm text-reiki-body sm:text-base max-w-2xl mx-auto">
+            <p className="mt-3 font-lato text-sm text-reiki-body sm:text-base max-w-2xl mx-auto">
               Finding calm in the world around us
             </p>
+            {/* Decorative line */}
+            <div className="mt-6 mx-auto h-px w-16 bg-gradient-to-r from-transparent via-reiki-olive/60 to-transparent" aria-hidden />
           </header>
-          <ul className="mt-8 grid grid-cols-2 gap-4 sm:gap-5 md:gap-6 list-none p-0 m-0" aria-label="Nature and stillness gallery">
-            {NATURE_STILLNESS.filter((_, i) => i !== 1 && i !== 4).map((item, i) => (
-              <li key={i} className="overflow-hidden rounded-2xl border border-reiki-card-border bg-reiki-section shadow-sm transition-all duration-300 hover:shadow-md">
-                <figure className="m-0 aspect-[4/3] min-h-[200px] sm:min-h-[260px] md:min-h-[300px]">
-                  <img src={item.src} alt={item.alt} className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105" loading="lazy" />
-                </figure>
-              </li>
-            ))}
-          </ul>
+
+          <div
+            className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6 max-w-6xl mx-auto"
+            aria-label="Nature and stillness gallery"
+          >
+            {NATURE_STILLNESS.map((item, i) => {
+              const corners = [
+                "rounded-tl-[1.75rem] rounded-tr-xl rounded-bl-xl rounded-br-xl sm:rounded-tl-[2rem]",
+                "rounded-tr-[1.75rem] rounded-tl-xl rounded-bl-xl rounded-br-xl sm:rounded-tr-[2rem]",
+                "rounded-bl-[1.75rem] rounded-tl-xl rounded-tr-xl rounded-br-xl sm:rounded-bl-[2rem]",
+                "rounded-br-[1.75rem] rounded-tl-xl rounded-tr-xl rounded-bl-xl sm:rounded-br-[2rem]",
+              ];
+              return (
+                <div
+                  key={i}
+                  className={`group overflow-hidden border-2 border-reiki-card-border bg-reiki-section shadow-lg transition-all duration-500 hover:shadow-2xl hover:border-reiki-olive/40 hover:-translate-y-1 ${corners[i]}`}
+                  style={{ transitionDelay: `${i * 40}ms` }}
+                >
+                  <figure className="m-0 relative w-full aspect-[4/5] min-h-[280px] sm:min-h-[320px] md:min-h-[380px] lg:min-h-[440px]">
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                      loading={i === 0 ? "eager" : "lazy"}
+                    />
+                    {/* Subtle bottom gradient so image reads clearly */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" aria-hidden />
+                  </figure>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* Practice & Presence – Alternating large/small */}
-      <section className="bg-white px-4 py-12 md:py-16 lg:py-20">
+      <section className="bg-white px-4 py-8 md:py-16 lg:py-20">
         <LotusSectionIcon />
         <div className="mx-auto max-w-7xl">
           <h2 className="font-garamond text-center text-2xl text-reiki-dark sm:text-3xl md:text-4xl" style={{ fontFamily: "EB Garamond" }}>
@@ -122,14 +153,14 @@ export default function GalleryPage() {
           <p className="mt-2 font-lato text-center text-sm text-reiki-body sm:text-base max-w-2xl mx-auto">
             The art of showing up—fully and gently
           </p>
-          <div className="mt-10 flex flex-col gap-8 md:gap-12 w-full">
+          <div className="mt-6 flex flex-col gap-4 md:mt-10 md:gap-12 w-full">
             {PRACTICE_PRESENCE.map((item, i) => (
               <div
                 key={i}
                 className={`overflow-hidden rounded-2xl border border-reiki-card-border bg-reiki-section shadow-sm ${i % 2 === 1 ? "md:ml-auto md:mr-0" : "md:mr-auto md:ml-0"}`}
               >
-                <div className={`relative aspect-[8/3] md:aspect-[4/2] md:max-h-[600px]`}>
-                  <img src={item.src} alt={item.alt} className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
+                <div className="relative aspect-[4/3] min-h-[220px] sm:min-h-[280px] md:aspect-[4/2] md:min-h-0 md:max-h-[600px]">
+                  <img src={item.src} alt={item.alt} className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105" />
                 </div>
               </div>
             ))}
