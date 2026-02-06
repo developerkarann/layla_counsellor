@@ -36,10 +36,10 @@ export const ABOUT = {
     "Bridging cultures & TCK support",
   ],
   values: [
-    { title: "Respect", text: "Unconditional respect for who you are and where you are from." },
-    { title: "Choice", text: "Your free choice and inner knowing guide the work we do together." },
-    { title: "Wholeness", text: "Physical, emotional, mental, and spiritual dimensions are all welcome." },
-    { title: "Presence", text: "I meet you where you are—no judgment, only space to heal and grow." },
+    { title: "Respect", text: "Unconditional respect for who you are and where you are from. Your background, beliefs, and identity are honoured in every session, creating a foundation of safety and trust so you can open up fully." },
+    { title: "Choice", text: "Your free choice and inner knowing guide the work we do together. I support your autonomy at every step—you decide what to explore, when to pause, and how far to go. Your intuition leads; I walk beside you." },
+    { title: "Wholeness", text: "Physical, emotional, mental, and spiritual dimensions are all welcome. Healing is not limited to one layer; we attend to your whole being so that change can ripple through body, heart, mind, and spirit." },
+    { title: "Presence", text: "I meet you where you are—no judgment, only space to heal and grow. Whatever you bring into the room is held with care. You are seen, heard, and accepted exactly as you are in this moment." },
   ],
 };
 

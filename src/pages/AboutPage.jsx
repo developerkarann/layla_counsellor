@@ -191,14 +191,18 @@ export default function AboutPage() {
             My <span className="text-reiki-olive">path</span>
           </h2>
           <div className="mt-16 relative">
+            {/* Vertical line: centered at 1.5rem so it runs through the number circles */}
             <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-reiki-card-border hidden sm:block" aria-hidden />
-            <div className="space-y-12 sm:pl-20">
+            <div className="space-y-12">
               {JOURNEY.map((step, i) => (
-                <div key={i} className="relative flex flex-col sm:flex-row gap-6 sm:gap-10">
-                  <span className="flex sm:absolute sm:left-6 sm:-translate-x-1/2 w-12 h-12 shrink-0 items-center justify-center rounded-full border-4 border-reiki-olive bg-reiki-section font-garamond text-lg font-bold text-reiki-dark shadow-md z-10">
-                    {i + 1}
-                  </span>
-                  <div className="sm:pl-8 flex-1">
+                <div key={i} className="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-8">
+                  {/* Fixed-width column so numbers stay aligned on the line */}
+                  <div className="flex sm:w-12 sm:shrink-0 sm:justify-center items-center sm:pt-0.5">
+                    <span className="flex w-12 h-12 shrink-0 items-center justify-center rounded-full border-4 border-reiki-olive bg-reiki-section font-garamond text-lg font-bold text-reiki-dark shadow-md z-10" aria-hidden>
+                      {i + 1}
+                    </span>
+                  </div>
+                  <div className="flex-1 min-w-0 sm:pl-2">
                     <span className="font-lato text-xs font-bold uppercase tracking-wider text-reiki-olive">{step.year}</span>
                     <h3 className="mt-1 font-garamond text-2xl text-reiki-dark" style={{ fontFamily: "EB Garamond" }}>{step.title}</h3>
                     <p className="mt-3 font-lato text-reiki-body leading-relaxed text-lg">{step.text}</p>

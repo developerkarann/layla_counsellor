@@ -21,11 +21,11 @@ const NATURE_STILLNESS = [
 ];
 
 const PRACTICE_PRESENCE = [
-  { src: "/main4.JPG", alt: "Practice" },
-  { src: "/main5.JPG", alt: "Focus" },
-  { src: "/standing3.JPG", alt: "Energy" },
+  { src: "/slide1.JPG", alt: "Practice" },
+  { src: "/slide3.JPG", alt: "Focus" },
+  { src: "/service1.JPG", alt: "Energy" },
   { src: "/standing4.JPG", alt: "Flow" },
-  { src: "/main6.JPG", alt: "Presence" },
+  { src: "/slide2.JPG", alt: "Presence" },
 ];
 
 export default function GalleryPage() {
@@ -124,7 +124,7 @@ export default function GalleryPage() {
                 key={i}
                 className={`overflow-hidden rounded-2xl border border-reiki-card-border bg-reiki-section shadow-sm ${i % 2 === 1 ? "md:ml-auto md:mr-0" : "md:mr-auto md:ml-0"}`}
               >
-                <div className={`relative aspect-[8/3] md:aspect-[4/2] md:max-h-[560px]`}>
+                <div className={`relative aspect-[8/3] md:aspect-[4/2] md:max-h-[600px]`}>
                   <img src={item.src} alt={item.alt} className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
                 </div>
               </div>
