@@ -8,6 +8,7 @@ const FOOTER_LINKS = [
   { label: "Gallery", href: "/gallery" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
+  { label: "Book a session", href: "/availability" },
 ];
 
 const SOCIAL_LINKS = [

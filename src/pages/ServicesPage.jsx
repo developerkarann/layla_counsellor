@@ -112,7 +112,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
               </div>
-              <Link to="/contact" className="mt-8 inline-block rounded-lg bg-reiki-dark px-8 py-3 font-sans text-sm font-semibold text-white transition hover:opacity-90">
+              <Link to="/availability" className="mt-8 inline-block rounded-lg bg-reiki-dark px-8 py-3 font-sans text-sm font-semibold text-white transition hover:opacity-90">
                 Book a session
               </Link>
             </div>
@@ -165,7 +165,7 @@ export default function ServicesPage() {
                 ))}
               </ul>
             </div>
-            <Link to="/contact" className="mt-8 inline-block rounded-lg bg-reiki-dark px-8 py-3 font-sans text-sm font-semibold text-white transition hover:opacity-90">
+            <Link to="/availability" className="mt-8 inline-block rounded-lg bg-reiki-dark px-8 py-3 font-sans text-sm font-semibold text-white transition hover:opacity-90">
               Book a session
             </Link>
           </div>
@@ -205,7 +205,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
               </div>
-              <Link to="/contact" className="mt-8 inline-block rounded-lg bg-reiki-dark px-8 py-3 font-sans text-sm font-semibold text-white transition hover:opacity-90">
+              <Link to="/availability" className="mt-8 inline-block rounded-lg bg-reiki-dark px-8 py-3 font-sans text-sm font-semibold text-white transition hover:opacity-90">
                 Book a session
               </Link>
             </div>

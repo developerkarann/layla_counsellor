@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaInstagram, FaFacebookF, FaYoutube, FaTelegram, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import LotusSectionIcon from "../components/LotusSectionIcon";
@@ -320,27 +321,40 @@ export default function ContactPage() {
                 <span className="text-reiki-olive">Availability</span>
               </h2>
               <p className="mt-3 font-lato text-sm text-reiki-body">
-                General opening hours. Sessions are by appointment—get in touch to find a slot that works for you.
+                Book a session at a time that suits you. Choose a date and slot in the calendar below.
               </p>
-              <div className="mt-6 flex-1">
-                <ul className="space-y-4">
-                  {OFFICE_HOURS.map((row) => (
-                    <li key={row.day} className="flex items-center justify-between gap-4 py-3 border-b border-reiki-card-border last:border-0 last:pb-0 first:pt-0">
-                      <span className="font-lato font-medium text-reiki-dark">{row.day}</span>
-                      <span className="font-lato text-sm text-reiki-body shrink-0">{row.time}</span>
-                    </li>
+              {/* Calendly-style widget preview */}
+              <div className="mt-6 flex-1 rounded-xl border border-reiki-card-border bg-white p-4 overflow-hidden">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="font-lato text-sm font-semibold text-reiki-dark">Calendar</span>
+                  <span className="font-lato text-xs text-reiki-muted">Demo</span>
+                </div>
+                <div className="grid grid-cols-7 gap-0.5 text-center mb-3">
+                  {["M", "T", "W", "T", "F", "S", "S"].map((d, i) => (
+                    <span key={i} className="font-lato text-[10px] text-reiki-muted">{d}</span>
                   ))}
-                </ul>
-                <p className="mt-6 font-lato text-xs text-reiki-muted italic">
-                  All times are flexible by prior arrangement. Weekend and evening slots may be available on request.
-                </p>
-                <a
-                  href="#contact-message"
-                  className="mt-6 inline-flex items-center justify-center rounded-lg bg-reiki-dark px-5 py-2.5 font-lato text-sm font-semibold text-white transition hover:opacity-90"
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((d) => (
+                    <span key={d} className="font-lato text-xs py-1 text-reiki-body">{d}</span>
+                  ))}
+                </div>
+                <div className="border-t border-reiki-card-border pt-3">
+                  <p className="font-lato text-xs text-reiki-muted mb-2">Available times</p>
+                  <div className="flex flex-wrap gap-1">
+                    {["9:00", "9:30", "10:00", "10:30"].map((t) => (
+                      <span key={t} className="inline-block rounded bg-reiki-section px-2 py-1 font-lato text-xs text-reiki-body">{t}</span>
+                    ))}
+                  </div>
+                </div>
+                <Link
+                  to="/availability"
+                  className="mt-4 flex w-full items-center justify-center rounded-lg bg-reiki-dark px-4 py-2.5 font-lato text-sm font-semibold text-white transition hover:opacity-90"
                 >
-                  Request a time
-                </a>
+                  Choose a slot
+                </Link>
               </div>
+              <p className="mt-4 font-lato text-xs text-reiki-muted italic">
+                All times are flexible by prior arrangement. Weekend and evening slots may be available on request.
+              </p>
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ import BlogDetailPage from "./pages/BlogDetailPage";
 import ContactPage from "./pages/ContactPage";
 import ServicesPage from "./pages/ServicesPage";
 import AboutPage from "./pages/AboutPage";
+import AvailabilityPage from "./pages/AvailabilityPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogDetailPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/availability" element={<AvailabilityPage />} />
       </Routes>
       <Footer />
     </div>
