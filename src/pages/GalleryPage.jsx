@@ -31,10 +31,14 @@ const PRACTICE_PRESENCE = [
 export default function GalleryPage() {
   return (
     <main className="min-h-screen bg-page-bg">
-      {/* Hero */}
-      <section className="relative min-h-[50vh] sm:min-h-[60vh] flex items-end justify-center overflow-hidden">
-        <img src={HERO_IMAGE} alt="" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-reiki-dark/40" aria-hidden />
+      {/* Hero – face visible and centered */}
+      <section className="relative min-h-[50vh] sm:min-h-[60vh] md:min-h-[65vh] flex items-end justify-center overflow-hidden">
+        <img
+          src={HERO_IMAGE}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-[50%_25%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-reiki-dark/20 via-reiki-dark/40 to-reiki-dark/70" aria-hidden />
         <div className="relative z-10 w-full max-w-7xl px-4 pb-12 pt-24 sm:pb-16 md:pb-20 text-center">
           <div className="inline-flex flex-col items-center">
             <span className="font-script text-2xl text-white/90 sm:text-3xl" style={{ fontFamily: "Dancing Script" }}>Layla</span>

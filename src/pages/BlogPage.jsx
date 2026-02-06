@@ -10,10 +10,14 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen bg-page-bg">
-      {/* Hero */}
-      <section className="relative min-h-[45vh] sm:min-h-[50vh] flex items-end justify-center overflow-hidden">
-        <img src={HERO_IMAGE} alt="" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-reiki-dark/30 via-reiki-dark/50 to-reiki-dark/70" aria-hidden />
+      {/* Hero – face-focused on desktop */}
+      <section className="relative min-h-[45vh] sm:min-h-[50vh] md:min-h-[58vh] flex items-end justify-center overflow-hidden">
+        <img
+          src={HERO_IMAGE}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-top md:object-[50%_22%] scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-reiki-dark/25 via-reiki-dark/48 to-reiki-dark/72" aria-hidden />
         <div className="relative z-10 w-full max-w-7xl px-4 pb-14 pt-24 sm:pb-20 md:pb-24 text-center">
           <div className="inline-flex flex-col items-center">
             <span className="font-script text-2xl text-white/90 sm:text-3xl" style={{ fontFamily: "Dancing Script" }}>Layla</span>
@@ -184,7 +188,7 @@ export default function BlogPage() {
       <section className="bg-reiki-bg-stripe border-t border-reiki-accent/40 px-4 py-12 md:py-16">
         <div className="mx-auto max-w-4xl">
           <div className="overflow-hidden rounded-2xl border border-reiki-card-border bg-reiki-section shadow-md md:flex">
-            <div className="relative h-48 w-full shrink-0 md:h-auto md:w-72 overflow-hidden">
+            <div className="relative w-full shrink-0 aspect-[3/4] min-h-[240px] max-h-[320px] md:max-h-none md:aspect-auto md:h-auto md:w-72 overflow-hidden rounded-t-2xl md:rounded-l-2xl md:rounded-r-none">
               <img src={AUTHOR_IMAGE} alt="Layla" className="h-full w-full object-cover object-top" />
               <div className="absolute inset-0 bg-reiki-dark/10 md:bg-transparent" aria-hidden />
             </div>
@@ -194,6 +198,13 @@ export default function BlogPage() {
               </h2>
               <p className="mt-3 font-lato text-reiki-body leading-relaxed">
                 This blog is a space where I share what I learn from my clients, my practice, and the journey of bridging cultures and healing. I hope these words meet you where you are and remind you that you are not alone on the path.
+              </p>
+              <p className="mt-3 font-lato text-reiki-body leading-relaxed">
+                Here I write about presence, third-culture identity, and the small shifts that open the door to wholeness. Whether you are new to energy work or deepening a long-standing practice, these reflections are offered with care and respect for your own pace.
+              </p>
+
+              <p className="mt-3 font-lato text-reiki-body leading-relaxed">
+                This space continues an exploration of rooted awareness, liminal belonging, and the quiet adjustments that invite integration.
               </p>
               <Link to="/#about" className="mt-4 inline-block font-sans text-sm font-semibold text-reiki-dark hover:text-reiki-olive transition-colors">
                 More about me →

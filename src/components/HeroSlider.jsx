@@ -64,7 +64,7 @@ export default function HeroSlider() {
   const goToSlide = (i) => setCurrent(i);
 
   return (
-    <section id="home" className="bg-reiki-bg-stripe px-3 sm:px-4 py-4 sm:py-6 md:px-6 md:py-10">
+    <section id="home" className="bg-reiki-bg-stripe px-3 sm:px-4 py-4 sm:py-6 md:px-6 md:py-12">
       <div className="mx-auto max-w-[1450px]">
         <div className="overflow-hidden rounded-lg bg-reiki-section shadow-md">
           <div className="relative aspect-[4/3] sm:aspect-[16/9] w-full md:aspect-[2.2/1]">
@@ -87,19 +87,6 @@ export default function HeroSlider() {
             })}
           </div>
         </div>
-        {/* Pagination dots - one per slide */}
-        {/* <div className="mt-4 flex flex-wrap justify-center gap-2">
-          {SLIDES.map((_, i) => (
-            <button
-              key={`dot-${i}`}
-              type="button"
-              onClick={() => goToSlide(i)}
-              className={`h-2.5 w-2.5 rounded-full transition-colors shrink-0 ${i === currentIndex ? "bg-reiki-dark" : "border border-reiki-dark/40 bg-white"}`}
-              aria-label={`Go to slide ${i + 1}`}
-              aria-current={i === currentIndex ? "true" : undefined}
-            />
-          ))}
-        </div> */}
       </div>
     </section>
   );

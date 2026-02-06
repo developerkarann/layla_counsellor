@@ -1,12 +1,6 @@
 import LotusSectionIcon from "../LotusSectionIcon";
 
 const LEFT_BENEFITS = [
-  // "Shamanic Healing",
-  // "Bring Harmony in your Relationships.",
-  // "Cultivate Joy and Peace with Yourself.",
-  // "Open your Heart to Greater Love.",
-  // "Realize your Life Purpose & Mission",
-  // "Free from Traumas.",
   "Bridging Cultures: Empowerment Coaching for Global Souls.",
   "Find Home Within: Resolve Conflicts of Dual Identities.",
   "Aligned Across Borders: Balance Expectations with Personal Growth.",
@@ -76,7 +70,7 @@ export default function Benefits() {
             <div className="relative w-full max-w-sm mx-auto lg:max-w-none overflow-hidden">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-t-[8rem] sm:rounded-t-[10rem] md:rounded-t-[12rem] lg:rounded-t-[13rem] bg-reiki-section-alt shadow-md">
                 <img
-                  src="/group.JPG"
+                  src="/main2.JPG"
                   alt="Layla Choug "
                   className="h-full w-full object-cover"
                 />

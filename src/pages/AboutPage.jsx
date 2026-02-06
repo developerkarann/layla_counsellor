@@ -115,13 +115,13 @@ export default function AboutPage() {
           <div className="grid gap-0 lg:grid-cols-12 lg:gap-0 lg:items-stretch">
             <div className="lg:col-span-7 relative min-h-[400px] sm:min-h-[500px] lg:min-h-[600px]">
               <img src="/awaken-final.jpg" alt="Awaken your powers" className="absolute inset-0 h-full w-full object-cover object-top" />
-              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/0 to-white/95 lg:to-white/90" aria-hidden />
-              <div className="absolute inset-0 flex items-center lg:items-center lg:justify-end p-8 md:p-12">
+              <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-white/0 via-white/0 to-white/90" aria-hidden />
+              <div className="absolute inset-0 hidden lg:flex items-center justify-end p-8 md:p-12">
                 <div className="max-w-md lg:max-w-lg lg:mr-12 lg:ml-auto">
-                  <h2 className="font-garamond text-2xl text-reiki-dark sm:text-3xl md:text-4xl lg:text-white lg:drop-shadow-md" style={{ fontFamily: "EB Garamond" }}>
-                    <span className="text-reiki-olive lg:text-reiki-accent">Awakens</span> your powers of self healing
+                  <h2 className="font-garamond text-2xl sm:text-3xl md:text-4xl text-white drop-shadow-md" style={{ fontFamily: "EB Garamond" }}>
+                    <span className="text-reiki-accent">Awakens</span> your powers of self healing
                   </h2>
-                  <p className="mt-4 font-lato text-reiki-dark lg:text-white/95 text-base sm:text-lg lg:drop-shadow-sm">
+                  <p className="mt-4 font-lato text-white/95 text-base sm:text-lg drop-shadow-sm">
                     {ABOUT.awaken.closing}
                   </p>
                 </div>
@@ -184,31 +184,69 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Journey with visual timeline and image */}
+      {/* Journey – card layout on mobile, timeline on desktop */}
       <section className="bg-reiki-bg-stripe py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="font-garamond text-center text-2xl text-reiki-dark sm:text-3xl" style={{ fontFamily: "EB Garamond" }}>
             My <span className="text-reiki-olive">path</span>
           </h2>
-          <div className="mt-16 relative">
-            {/* Vertical line: centered at 1.5rem so it runs through the number circles */}
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-reiki-card-border hidden sm:block" aria-hidden />
+
+          {/* Mobile: stacked cards with centered step number */}
+          <div className="mt-10 space-y-6 sm:hidden">
+            {JOURNEY.map((step, i) => (
+              <article
+                key={i}
+                className="relative overflow-hidden rounded-3xl border-2 border-reiki-card-border bg-white shadow-xl"
+              >
+                <div className="flex flex-col items-center text-center px-6 pt-8 pb-6">
+                  <span
+                    className="flex w-16 h-16 items-center justify-center rounded-2xl bg-reiki-olive/15 border-2 border-reiki-olive font-garamond text-2xl font-bold text-reiki-dark shadow-inner"
+                    aria-hidden
+                  >
+                    {i + 1}
+                  </span>
+                  <span className="mt-4 font-lato text-xs font-bold uppercase tracking-widest text-reiki-olive">
+                    {step.year}
+                  </span>
+                  <h3 className="mt-2 font-garamond text-xl text-reiki-dark" style={{ fontFamily: "EB Garamond" }}>
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 font-lato text-reiki-body leading-relaxed text-base">
+                    {step.text}
+                  </p>
+                </div>
+                {i === 1 && (
+                  <div className="w-full aspect-square max-h-56 overflow-hidden border-t-2 border-reiki-card-border">
+                    <img src="/layla2.JPG" alt="" className="h-full w-full object-cover" />
+                  </div>
+                )}
+                {i < JOURNEY.length - 1 && (
+                  <div className="flex justify-center py-2" aria-hidden>
+                    <span className="text-reiki-olive/50 text-2xl">↓</span>
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+
+          {/* Desktop: timeline with vertical line and left-aligned numbers */}
+          <div className="mt-16 relative hidden sm:block">
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-reiki-card-border" aria-hidden />
             <div className="space-y-12">
               {JOURNEY.map((step, i) => (
-                <div key={i} className="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-8">
-                  {/* Fixed-width column so numbers stay aligned on the line */}
-                  <div className="flex sm:w-12 sm:shrink-0 sm:justify-center items-center sm:pt-0.5">
-                    <span className="flex w-12 h-12 shrink-0 items-center justify-center rounded-full border-4 border-reiki-olive bg-reiki-section font-garamond text-lg font-bold text-reiki-dark shadow-md z-10" aria-hidden>
+                <div key={i} className="flex flex-row items-start gap-6 sm:gap-8">
+                  <div className="flex w-12 shrink-0 justify-center pt-0.5">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full border-4 border-reiki-olive bg-reiki-section font-garamond text-lg font-bold text-reiki-dark shadow-md z-10" aria-hidden>
                       {i + 1}
                     </span>
                   </div>
-                  <div className="flex-1 min-w-0 sm:pl-2">
+                  <div className="flex-1 min-w-0 pl-2">
                     <span className="font-lato text-xs font-bold uppercase tracking-wider text-reiki-olive">{step.year}</span>
                     <h3 className="mt-1 font-garamond text-2xl text-reiki-dark" style={{ fontFamily: "EB Garamond" }}>{step.title}</h3>
                     <p className="mt-3 font-lato text-reiki-body leading-relaxed text-lg">{step.text}</p>
                   </div>
                   {i === 1 && (
-                    <div className="sm:w-48 shrink-0 rounded-2xl overflow-hidden border-2 border-reiki-card-border shadow-lg">
+                    <div className="w-48 shrink-0 rounded-2xl overflow-hidden border-2 border-reiki-card-border shadow-lg">
                       <img src="/layla2.JPG" alt="" className="aspect-square w-full object-cover" />
                     </div>
                   )}

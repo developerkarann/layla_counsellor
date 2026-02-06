@@ -6,7 +6,7 @@ export default function AboutJane() {
       <div className="mx-auto flex flex-1 max-w-7xl flex-col justify-center w-full">
         <div className="grid items-center gap-6 sm:gap-8 md:gap-10 lg:grid-cols-2 lg:gap-0">
           <div className="flex justify-center lg:justify-start">
-            <div className="relative h-64 w-48 shrink-0 sm:h-72 sm:w-52 md:h-[400px] md:w-[320px] lg:h-[500px] lg:w-[400px] xl:h-[600px] xl:w-[500px]">
+            <div className="relative h-94 w-68 shrink-0  md:h-[400px] md:w-[320px] lg:h-[500px] lg:w-[400px] xl:h-[600px] xl:w-[500px]">
               <img
                 src="/about.JPG"
                 alt="About Layla"
@@ -15,9 +15,8 @@ export default function AboutJane() {
             </div>
           </div>
           <div className="min-w-0">
-            <h2 className="font-garamond text-xl leading-tight text-reiki-dark sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 sm:mb-8 md:mb-10">
-
-              Hi, my name is <span className=" text-reiki-olive"> Layla</span>
+            <h2 className="font-garamond text-xl leading-tight text-reiki-dark sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 sm:mb-8 md:mb-10 text-center md:text-left">
+              Hi, my name is <span className="text-reiki-olive"> Layla</span>
             </h2>
             <p className="mt-4 sm:mt-6 font-lato text-reiki-dark text-sm leading-relaxed sm:text-base md:text-lg">
               I am a trained practitioner for shamanic energy medicine, medical Qigong and life coaching. My work bridges cultures, traditions, religions and identities. It holds unconditional respect of who you are and where you are from. I have studied some of the most integrative systems of healing to offer a unique and holistic approach that is altogether physical, emotional, mental and spiritual.

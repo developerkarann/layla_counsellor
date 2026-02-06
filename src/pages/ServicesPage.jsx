@@ -17,10 +17,14 @@ function CheckIcon() {
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-page-bg">
-      {/* Hero */}
-      <section className="relative min-h-[55vh] sm:min-h-[60vh] flex items-end justify-center overflow-hidden">
-        <img src={HERO_IMAGE} alt="" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-reiki-dark/30 via-reiki-dark/50 to-reiki-dark/75" aria-hidden />
+      {/* Hero – face-focused on desktop */}
+      <section className="relative min-h-[55vh] sm:min-h-[60vh] md:min-h-[65vh] flex items-end justify-center overflow-hidden">
+        <img
+          src={HERO_IMAGE}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-top md:object-[50%_20%] scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-reiki-dark/25 via-reiki-dark/45 to-reiki-dark/75" aria-hidden />
         <div className="relative z-10 w-full max-w-7xl px-4 pb-16 pt-24 sm:pb-20 md:pb-24 text-center">
           <div className="inline-flex flex-col items-center">
             <span className="font-script text-2xl text-white/90 sm:text-3xl" style={{ fontFamily: "Dancing Script" }}>Layla</span>

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FaInstagram, FaFacebookF, FaYoutube, FaTelegram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import LotusSectionIcon from "../components/LotusSectionIcon";
 
 const HERO_IMAGE = "/slide3.JPG";
@@ -81,10 +83,14 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-page-bg">
-      {/* Hero */}
-      <section className="relative min-h-[50vh] sm:min-h-[55vh] flex items-end justify-center overflow-hidden">
-        <img src={HERO_IMAGE} alt="" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-reiki-dark/20 via-reiki-dark/50 to-reiki-dark/80" aria-hidden />
+      {/* Hero – face visible and centered */}
+      <section className="relative min-h-[50vh] sm:min-h-[55vh] md:min-h-[60vh] flex items-end justify-center overflow-hidden">
+        <img
+          src={HERO_IMAGE}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-[50%_28%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-reiki-dark/20 via-reiki-dark/45 to-reiki-dark/78" aria-hidden />
         <div className="relative z-10 w-full max-w-7xl px-4 pb-16 pt-24 sm:pb-20 md:pb-24 text-center">
           <div className="inline-flex flex-col items-center">
             <span className="font-script text-2xl text-white/90 sm:text-3xl" style={{ fontFamily: "Dancing Script" }}>Layla</span>
@@ -143,7 +149,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact form – main block */}
-      <section className="bg-reiki-bg-stripe px-4 py-12 md:py-16 lg:py-20">
+      <section id="contact-message" className="bg-reiki-bg-stripe px-4 py-12 md:py-16 lg:py-20 scroll-mt-20">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-garamond text-center text-2xl text-reiki-dark sm:text-3xl md:text-4xl" style={{ fontFamily: "EB Garamond" }}>
             Send a <span className="text-reiki-olive">message</span>
@@ -300,21 +306,32 @@ export default function ContactPage() {
                 <span className="font-lato text-sm text-reiki-muted">Map placeholder</span>
               </div>
             </div>
-            <div className="rounded-2xl border border-reiki-card-border bg-reiki-section p-6 sm:p-8">
+            <div className="rounded-2xl border border-reiki-card-border bg-reiki-section p-6 sm:p-8 flex flex-col">
               <h2 className="font-garamond text-xl text-reiki-dark sm:text-2xl" style={{ fontFamily: "EB Garamond" }}>
-                Availability
+                <span className="text-reiki-olive">Availability</span>
               </h2>
               <p className="mt-3 font-lato text-sm text-reiki-body">
                 General opening hours. Sessions are by appointment—get in touch to find a slot that works for you.
               </p>
-              <ul className="mt-6 space-y-3">
-                {OFFICE_HOURS.map((row) => (
-                  <li key={row.day} className="flex justify-between font-lato text-sm">
-                    <span className="text-reiki-dark">{row.day}</span>
-                    <span className="text-reiki-body">{row.time}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-6 flex-1">
+                <ul className="space-y-4">
+                  {OFFICE_HOURS.map((row) => (
+                    <li key={row.day} className="flex items-center justify-between gap-4 py-3 border-b border-reiki-card-border last:border-0 last:pb-0 first:pt-0">
+                      <span className="font-lato font-medium text-reiki-dark">{row.day}</span>
+                      <span className="font-lato text-sm text-reiki-body shrink-0">{row.time}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 font-lato text-xs text-reiki-muted italic">
+                  All times are flexible by prior arrangement. Weekend and evening slots may be available on request.
+                </p>
+                <a
+                  href="#contact-message"
+                  className="mt-6 inline-flex items-center justify-center rounded-lg bg-reiki-dark px-5 py-2.5 font-lato text-sm font-semibold text-white transition hover:opacity-90"
+                >
+                  Request a time
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -329,15 +346,21 @@ export default function ContactPage() {
           <p className="mt-3 font-lato text-sm text-reiki-body">
             Occasional updates, reflections, and a gentle presence online.
           </p>
-          <div className="mt-6 flex justify-center gap-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-reiki-card-border bg-reiki-section font-lato text-sm font-semibold text-reiki-dark hover:border-reiki-olive hover:text-reiki-olive transition-colors">
-              FB
+          <div className="mt-6 flex flex-wrap justify-center gap-3 sm:gap-4">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-reiki-card-border bg-reiki-section text-reiki-dark hover:border-reiki-olive hover:text-reiki-olive hover:bg-reiki-olive/10 transition-colors" aria-label="Instagram">
+              <FaInstagram className="text-xl" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-reiki-card-border bg-reiki-section font-lato text-sm font-semibold text-reiki-dark hover:border-reiki-olive hover:text-reiki-olive transition-colors">
-              IG
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-reiki-card-border bg-reiki-section text-reiki-dark hover:border-reiki-olive hover:text-reiki-olive hover:bg-reiki-olive/10 transition-colors" aria-label="Facebook">
+              <FaFacebookF className="text-xl" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-reiki-card-border bg-reiki-section font-lato text-sm font-semibold text-reiki-dark hover:border-reiki-olive hover:text-reiki-olive transition-colors">
-              TW
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-reiki-card-border bg-reiki-section text-reiki-dark hover:border-reiki-olive hover:text-reiki-olive hover:bg-reiki-olive/10 transition-colors" aria-label="X (Twitter)">
+              <FaXTwitter className="text-xl" />
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-reiki-card-border bg-reiki-section text-reiki-dark hover:border-reiki-olive hover:text-reiki-olive hover:bg-reiki-olive/10 transition-colors" aria-label="YouTube">
+              <FaYoutube className="text-xl" />
+            </a>
+            <a href="https://t.me" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-reiki-card-border bg-reiki-section text-reiki-dark hover:border-reiki-olive hover:text-reiki-olive hover:bg-reiki-olive/10 transition-colors" aria-label="Telegram">
+              <FaTelegram className="text-xl" />
             </a>
           </div>
         </div>
