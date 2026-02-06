@@ -32,7 +32,7 @@ export const SERVICES = [
     id: "tck-coaching",
     title: "TCK Holistic Coaching",
     tagline: "Find home within—wherever you are",
-    image: "/layla3.JPG",
+    image: "/group.JPG",
     imageAlt: "Holistic coaching for TCKs",
     keyPoints: [
       "Bridging cultures: empowerment coaching for global souls",

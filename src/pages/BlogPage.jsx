@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import LotusSectionIcon from "../components/LotusSectionIcon";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "../data/blogPosts";
 
-const HERO_IMAGE = "/layla3.JPG";
+const HERO_IMAGE = "/slide1.JPG";
 const AUTHOR_IMAGE = "/about.JPG";
 
 export default function BlogPage() {
@@ -149,9 +149,8 @@ export default function BlogPage() {
             {rest.map((post, i) => (
               <article
                 key={post.slug}
-                className={`flex flex-col overflow-hidden rounded-xl border bg-reiki-section shadow-sm transition-all hover:shadow-md ${
-                  i === 0 ? "border-l-4 border-l-reiki-olive border-reiki-card-border" : "border-reiki-card-border"
-                }`}
+                className={`flex flex-col overflow-hidden rounded-xl border bg-reiki-section shadow-sm transition-all hover:shadow-md ${i === 0 ? "border-l-4 border-l-reiki-olive border-reiki-card-border" : "border-reiki-card-border"
+                  }`}
               >
                 <Link to={`/blog/${post.slug}`} className="block overflow-hidden rounded-t-xl">
                   <div className="aspect-[4/3]">

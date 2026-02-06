@@ -2,14 +2,14 @@ import LotusSectionIcon from "../LotusSectionIcon";
 
 const GALLERY_IMAGES = [
   { src: "/awaken-final.jpg", alt: "Awaken your inner peace" },
-  { src: "/layla3.JPG", alt: "Healing space" },
+  { src: "/layla2.JPG", alt: "Healing space" },
   { src: "/slide1.JPG", alt: "Reiki practice" },
   { src: "/about.JPG", alt: "Mindful presence" },
   { src: "/slide3.JPG", alt: "Calm healing space" },
-  { src: "/IMG_0827.JPG", alt: "Serene moment" },
+  { src: "/main.JPG", alt: "Serene moment" },
   { src: "/slide4.JPG", alt: "Meditation" },
-  { src: "/IMG_0849.JPG", alt: "Nature and stillness" },
-  { src: "/IMG_0860.JPG", alt: "Quiet reflection" },
+  { src: "/standing.JPG", alt: "Nature and stillness" },
+  { src: "/yoga.JPG", alt: "Quiet reflection" },
 ];
 
 export default function Gallery() {

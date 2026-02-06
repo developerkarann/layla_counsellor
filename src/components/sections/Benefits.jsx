@@ -76,7 +76,7 @@ export default function Benefits() {
             <div className="relative w-full max-w-sm mx-auto lg:max-w-none overflow-hidden">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-t-[8rem] sm:rounded-t-[10rem] md:rounded-t-[12rem] lg:rounded-t-[13rem] bg-reiki-section-alt shadow-md">
                 <img
-                  src="/layla3.JPG"
+                  src="/group.JPG"
                   alt="Layla Choug "
                   className="h-full w-full object-cover"
                 />

@@ -1,31 +1,31 @@
 import { Link } from "react-router-dom";
 import LotusSectionIcon from "../components/LotusSectionIcon";
 
-const HERO_IMAGE = "/awaken-final.jpg";
+const HERO_IMAGE = "/layla3.JPG";
 
 const HEALING_SPACES = [
   { src: "/layla3.JPG", alt: "Healing space" },
   { src: "/slide1.JPG", alt: "Reiki practice" },
   { src: "/slide3.JPG", alt: "Calm room" },
   { src: "/about.JPG", alt: "Presence" },
-  { src: "/IMG_0827.JPG", alt: "Serene moment" },
+  { src: "/main.JPG", alt: "Serene moment" },
 ];
 
 const NATURE_STILLNESS = [
   { src: "/slide2.JPG", alt: "Stillness" },
   { src: "/slide4.JPG", alt: "Meditation" },
-  { src: "/IMG_0849.JPG", alt: "Nature" },
-  { src: "/IMG_0853.JPG", alt: "Quiet" },
-  { src: "/IMG_0860.JPG", alt: "Reflection" },
+  { src: "/standing.JPG", alt: "Nature" },
+  { src: "/yoga.JPG", alt: "Quiet" },
+  { src: "/main3.JPG", alt: "Reflection" },
   { src: "/IMG_0863.JPG", alt: "Peace" },
 ];
 
 const PRACTICE_PRESENCE = [
-  { src: "/IMG_0830.JPG", alt: "Practice" },
-  { src: "/IMG_0835.JPG", alt: "Focus" },
-  { src: "/IMG_0838.JPG", alt: "Energy" },
-  { src: "/IMG_0841.JPG", alt: "Flow" },
-  { src: "/IMG_0855.JPG", alt: "Presence" },
+  { src: "/main4.JPG", alt: "Practice" },
+  { src: "/main5.JPG", alt: "Focus" },
+  { src: "/standing3.JPG", alt: "Energy" },
+  { src: "/standing4.JPG", alt: "Flow" },
+  { src: "/main6.JPG", alt: "Presence" },
 ];
 
 export default function GalleryPage() {
@@ -76,7 +76,7 @@ export default function GalleryPage() {
             </div>
             {HEALING_SPACES.slice(1, 5).map((item, i) => (
               <div key={i} className="overflow-hidden rounded-2xl border border-reiki-card-border bg-reiki-section shadow-sm">
-                <div className="relative aspect-[4/3]">
+                <div className="relative aspect-[2/3]">
                   <img src={item.src} alt={item.alt} className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
                 </div>
               </div>
@@ -85,30 +85,26 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Nature & Stillness – Staggered */}
-      <section className="bg-reiki-bg-stripe px-4 py-12 md:py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="font-garamond text-center text-2xl text-reiki-dark sm:text-3xl md:text-4xl" style={{ fontFamily: "EB Garamond" }}>
-            Nature & <span className="text-reiki-olive">Stillness</span>
-          </h2>
-          <p className="mt-2 font-lato text-center text-sm text-reiki-body sm:text-base max-w-2xl mx-auto">
-            Finding calm in the world around us
-          </p>
-          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-5">
-            {NATURE_STILLNESS.map((item, i) => {
-              const isCircle = i === 1 || i === 4;
-              return (
-                <div
-                  key={i}
-                  className={`overflow-hidden border border-reiki-card-border bg-reiki-section shadow-sm transition-all duration-300 hover:shadow-md ${
-                    isCircle ? "rounded-full aspect-square w-full max-w-[200px] sm:max-w-[240px] justify-self-center" : "rounded-2xl aspect-[3/4]"
-                  }`}
-                >
-                  <img src={item.src} alt={item.alt} className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-              );
-            })}
-          </div>
+      {/* Nature & Stillness – 4 images, symmetric 2×2 */}
+      <section className="bg-reiki-bg-stripe px-4 py-12 md:py-16 lg:py-20" aria-labelledby="nature-stillness-heading">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
+          <header className="text-center">
+            <h2 id="nature-stillness-heading" className="font-garamond text-2xl text-reiki-dark sm:text-3xl md:text-4xl" style={{ fontFamily: "EB Garamond" }}>
+              Nature & <span className="text-reiki-olive">Stillness</span>
+            </h2>
+            <p className="mt-2 font-lato text-sm text-reiki-body sm:text-base max-w-2xl mx-auto">
+              Finding calm in the world around us
+            </p>
+          </header>
+          <ul className="mt-8 grid grid-cols-2 gap-4 sm:gap-5 md:gap-6 list-none p-0 m-0" aria-label="Nature and stillness gallery">
+            {NATURE_STILLNESS.filter((_, i) => i !== 1 && i !== 4).map((item, i) => (
+              <li key={i} className="overflow-hidden rounded-2xl border border-reiki-card-border bg-reiki-section shadow-sm transition-all duration-300 hover:shadow-md">
+                <figure className="m-0 aspect-[4/3] min-h-[200px] sm:min-h-[260px] md:min-h-[300px]">
+                  <img src={item.src} alt={item.alt} className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105" loading="lazy" />
+                </figure>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -122,13 +118,13 @@ export default function GalleryPage() {
           <p className="mt-2 font-lato text-center text-sm text-reiki-body sm:text-base max-w-2xl mx-auto">
             The art of showing up—fully and gently
           </p>
-          <div className="mt-10 flex flex-col gap-8 md:gap-12">
+          <div className="mt-10 flex flex-col gap-8 md:gap-12 w-full">
             {PRACTICE_PRESENCE.map((item, i) => (
               <div
                 key={i}
-                className={`overflow-hidden rounded-2xl border border-reiki-card-border bg-reiki-section shadow-sm md:max-w-4xl ${i % 2 === 1 ? "md:ml-auto md:mr-0" : "md:mr-auto md:ml-0"}`}
+                className={`overflow-hidden rounded-2xl border border-reiki-card-border bg-reiki-section shadow-sm ${i % 2 === 1 ? "md:ml-auto md:mr-0" : "md:mr-auto md:ml-0"}`}
               >
-                <div className={`relative ${i % 2 === 0 ? "aspect-[21/9] md:aspect-[3/1]" : "aspect-[4/3] md:aspect-[4/3] md:max-h-[360px]"}`}>
+                <div className={`relative aspect-[8/3] md:aspect-[4/2] md:max-h-[560px]`}>
                   <img src={item.src} alt={item.alt} className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
                 </div>
               </div>

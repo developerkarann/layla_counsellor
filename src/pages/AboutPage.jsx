@@ -7,7 +7,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-page-bg">
       {/* Hero – full viewport, image dominant */}
       <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-end overflow-hidden">
-        <img src="/about.JPG" alt="" className="absolute inset-0 h-full w-full object-cover object-top scale-105" />
+        <img src="/slide4.JPG" alt="" className="absolute inset-0 h-full w-full object-cover object-top scale-105" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-reiki-dark/30 to-reiki-dark/80" aria-hidden />
         <div className="relative z-10 w-full px-4 pb-16 pt-24 sm:pb-20 md:pb-24 md:pt-32">
           <div className="mx-auto max-w-7xl flex flex-col items-center text-center">
@@ -38,7 +38,7 @@ export default function AboutPage() {
                   <img src="/about.JPG" alt="Layla" className="h-full w-full object-cover object-top" />
                 </div>
                 <div className="absolute -bottom-6 -right-4 sm:-right-8 w-[45%] sm:w-[50%] aspect-square overflow-hidden rounded-2xl border-4 border-white shadow-xl hidden sm:block">
-                  <img src="/layla3.JPG" alt="" className="h-full w-full object-cover" />
+                  <img src="/layla2.JPG" alt="" className="h-full w-full object-cover" />
                 </div>
                 <div className="absolute -top-4 -left-4 w-24 h-24 rounded-full border-4 border-white bg-reiki-olive/40 shadow-lg" aria-hidden />
               </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
             <div className="lg:col-span-2 relative order-first lg:order-none">
               <div className="sticky top-24">
                 <div className="aspect-[4/5] max-h-[500px] overflow-hidden rounded-3xl border border-reiki-card-border shadow-xl">
-                  <img src="/slide1.JPG" alt="" className="h-full w-full object-cover" />
+                  <img src="/yoga.JPG" alt="" className="h-full w-full object-cover" />
                 </div>
               </div>
             </div>
@@ -177,7 +177,7 @@ export default function AboutPage() {
             </div>
             <div className="order-1 lg:order-2">
               <div className="aspect-[4/3] sm:aspect-[3/4] max-h-[560px] overflow-hidden rounded-3xl border-4 border-reiki-card-border shadow-2xl">
-                <img src="/layla3.JPG" alt="Practice" className="h-full w-full object-cover" />
+                <img src="/service1.JPG" alt="Practice" className="h-full w-full object-cover" />
               </div>
             </div>
           </div>
@@ -205,7 +205,7 @@ export default function AboutPage() {
                   </div>
                   {i === 1 && (
                     <div className="sm:w-48 shrink-0 rounded-2xl overflow-hidden border-2 border-reiki-card-border shadow-lg">
-                      <img src="/about.JPG" alt="" className="aspect-square w-full object-cover" />
+                      <img src="/layla2.JPG" alt="" className="aspect-square w-full object-cover" />
                     </div>
                   )}
                 </div>
